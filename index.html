@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <nav>
+            <img src="Portfolioimages/logo.jpg" class="logo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <h1>Hi, I'm <span>Anjyot</span><br>Software Engineer</h1>
+            <div class="resume-container">
+                <a href="YourResume.pdf" class="resume-btn" target="_blank">Download Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        .tab-content {
+            max-height: 250px; /* Adjust height as needed */
+            overflow-y: auto; /* Enable vertical scrolling */
+            padding-right: 10px; /* Optional: Prevent scrollbar from overlapping text */
+        }
+    </style>
+    
+    <!-- About Me Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Portfolioimages/user.jpg" alt="User Image">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-description">
+                        Aspiring Software Engineer | Passionate about Full-Stack Development & Design | Creative Thinker
+                    </p>
+                    <div class="tabs">
+                        <button class="tab-link active" onclick="openTab(event, 'skills')">Skills</button>
+                        <button class="tab-link" onclick="openTab(event, 'experience')">Experience</button>
+                        <button class="tab-link" onclick="openTab(event, 'education')">Education</button>
+                    </div>
+
+                    <!-- Skills Section (Now Scrollable with PDFs for Each Skill) -->
+                    <div id="skills" class="tab-content active scrollable-content">
+                        <h3><a href="files/c.pdf" target="_blank" class="pdf-link" onclick="changeColor(this)">C Programming</a></h3>
+                        <p>Foundation of programming and system development.</p>
+                        <h3><a href="files/c++.pdf" target="_blank" class="pdf-link" onclick="changeColor(this)">C++ Programming</a></h3>
+                        <p>Object-oriented extension of C with better abstractions.</p>
+                        <h3><a href="files/pythond.pdf" target="_blank" class="pdf-link" onclick="changeColor(this)">Python Programming</a></h3>
+                        <p>Versatile, easy-to-learn, and widely used for automation and AI.</p>
+                        <h3><a href="files/mysql.pdf" target="_blank" class="pdf-link" onclick="changeColor(this)">MySQL-Database and Algorithms</a></h3>
+                        <p>Structured query language for managing relational data.</p>
+                        <h3><a href="files/ai.pdf" target="_blank" class="pdf-link" onclick="changeColor(this)">Introduction to Artificial Intelligence (AI)</a></h3>
+                        <p>Machines simulating human intelligence and decision-making.</p>
+                        <h3><a href="files/gemini.pdf" target="_blank" class="pdf-link" onclick="changeColor(this)">Introduction to Gemini for Google Workspace</a></h3>
+                        <p>Advanced AI model by Google for multimodal tasks.</p>
+                    </div>
+
+                    <!-- Experience Section (Scrollable) -->
+                    <div id="experience" class="tab-content scrollable-content">
+                        <h3><a href="#" class="pdf-link">Software Engineer Intern</a></h3>
+                        <p>Worked on front-end and back-end development.</p>
+                        <h3><a href="#" class="pdf-link">Web Developer</a></h3>
+                        <p>Designed and developed responsive web applications.</p>
+                    </div>
+
+                    <!-- Education Section (Scrollable) -->
+                    <div id="education" class="tab-content scrollable-content">
+                        <h3><a href="#" class="pdf-link">Bachelor of Engineering (BE)</a></h3>
+                        <p>Information Technology (Ongoing)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Scrollable Content Styling */
+        .scrollable-content {
+            max-height: 200px; /* Enables scrolling */
+            overflow-y: auto;
+            padding-right: 10px;
+            display: none; /* Hidden initially */
+        }
+    
+        .tab-content.active {
+            display: block; /* Show only active tab */
+        }
+
+        /* Custom scrollbar styling */
+        .scrollable-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+
+    <script>
+        function changeColor(link) {
+            link.style.color = "blue"; // Change color to blue on click
+        }   
+
+        function openTab(evt, tabName) {
+            document.querySelectorAll(".tab-content").forEach(tab => {
+                tab.classList.remove("active");
+            });
+
+            document.querySelectorAll(".tab-link").forEach(link => {
+            link.classList.remove("active");
+            });
+
+            document.getElementById(tabName).classList.add("active");
+
+            if (evt) evt.currentTarget.classList.add("active");
+        }
+    </script>
+    
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-heading">My Services</h2>
+        <div class="services-list">
+            <div>
+                <i class="icon">&#60;&#47;&#62;</i>
+                <h2>Web Design</h2>
+                <p>Modern and clean website development.</p>
+            </div>
+            <div>
+                <i class="icon">&#128187;</i>
+                <h2>UI/UX Design</h2>
+                <p>Enhancing user interaction with great design.</p>
+            </div>
+            <div>
+                <i class="icon">&#128241;</i>
+                <h2>App Design</h2>
+                <p>Creative and responsive mobile app interfaces.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Work Section -->
+    <section id="portfolio" class="work">
+        <h2 class="section-heading">My Work</h2>
+        <div class="work-container">
+
+            <!-- Work 1 -->
+            <div class="work-card">
+                <img src="Portfolioimages/work1.jpg" alt="Music App">
+                <div class="overlay">
+                    <h3>Music App</h3>
+                    <p>An app to listen to music offline and online.</p>
+                    <a href="https://yourmusicapp.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <!-- Work 2 -->
+            <div class="work-card">
+                <img src="Portfolioimages/work2.png" alt="AI Chatbot">
+                <div class="overlay">
+                    <h3>AI Chatbot</h3>
+                    <p>An intelligent chatbot for automated responses.</p>
+                    <a href="https://youraichatbot.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <!-- Work 3 -->
+            <div class="work-card">
+                <img src="Portfolioimages/work3.png" alt="Expense Tracker">
+                <div class="overlay">
+                    <h3>Expense Tracker</h3>
+                    <p>An app to track and manage expenses easily.</p>
+                    <a href="https://yourexpensetracker.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <!-- Work 4 (Initially Hidden) -->
+            <div class="work-card hidden">
+                <img src="Portfolioimages/work4.png" alt="Online Survey Tool">
+                <div class="overlay">
+                    <h3>Online Survey Tool</h3>
+                        <p>Educational survey tool for feedback and assessments.</p>
+                    <a href="https://youronlinesurveytool.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <!-- Work 5 (Initially Hidden) -->
+            <div class="work-card hidden">
+                <img src="Portfolioimages/work5.png" alt="Portfolio Website">
+                <div class="overlay">
+                    <h3>Portfolio Website</h3>
+                        <p>A personal portfolio to showcase skills and projects.</p>
+                    <a href="https://yourportfolio.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- See More & See Less Buttons -->
+        <div class="see-more-container">
+            <button id="seeMoreBtn" class="see-more-btn">See More</button>
+            <button id="seeLessBtn" class="see-more-btn hidden">See Less</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+        <!-- Left Side: Contact Details -->
+        <div class="contact-left">
+            <h2>Contact Me</h2>
+                <p><i class="fa-solid fa-paper-plane"></i> anjyotdhamapurkar1315@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +91 8055411507</p>
+            <div class="social-icons">
+                <a href="https://www.facebookeg.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://twittereg.com/yourprofile" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagrameg.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedineg.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        
+            <a href="YourResume.pdf" class="cv-btn" target="_blank">Download CV</a>
+        </div>
+        <!-- Right Side: Contact Form -->
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" placeholder="Your Message (Max 500 letters)" maxlength="500"></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+                <span id="msg"></span> <!-- Success/Error Message -->
+            </form>
+            <span id="msg"></span>
+        </div>
+        </div>
+    </section>
+  
+    <!-- Footer Section -->
+    <footer class="copyright">
+        <p>Copyright © Anjyot. All rights reserved</p>
+    </footer>
+  
+  
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+    // Tab Navigation Function
+    function openTab(evt, tabName) {
+        document.querySelectorAll(".tab-content").forEach(tab => tab.style.display = "none");
+        document.querySelectorAll(".tab-link").forEach(link => link.classList.remove("active"));
+
+        document.getElementById(tabName).style.display = "block";
+        if (evt) evt.currentTarget.classList.add("active");
+    }
+
+    // Set default tab to "Skills"
+    openTab(null, "skills");
+
+    // Attach event listeners to tab buttons
+    document.querySelectorAll(".tab-link").forEach(button => {
+        button.addEventListener("click", function (event) {
+            openTab(event, this.getAttribute("onclick").split("'")[1]);
+        });
+    });
+
+    // "See More" & "See Less" Button Functionality
+    let seeMoreBtn = document.getElementById("seeMoreBtn");
+    let seeLessBtn = document.getElementById("seeLessBtn");
+
+    if (seeMoreBtn && seeLessBtn) {
+        seeLessBtn.style.display = "none"; // Hide "See Less" initially
+
+        seeMoreBtn.addEventListener("click", function () {
+            document.querySelectorAll(".hidden").forEach(work => work.classList.remove("hidden")); // Show hidden works
+            this.style.display = "none";
+            seeLessBtn.style.display = "inline-block";
+        });
+
+        seeLessBtn.addEventListener("click", function () {
+            document.querySelectorAll(".work-card:nth-child(n+4)").forEach(work => work.classList.add("hidden")); // Hide Work 4 & 5
+            this.style.display = "none";
+            seeMoreBtn.style.display = "inline-block";
+        });
+    }
+
+    // Toggle List Functionality (for Skills, Experience, and Education)
+    document.querySelectorAll(".toggle-list").forEach(item => {
+        item.addEventListener("click", function () {
+            const list = this.nextElementSibling; // Get the associated list
+            list.style.display = (list.style.display === "block") ? "none" : "block";
+        });
+    });
+
+    // Open PDF and Change Color on Click
+    document.querySelectorAll(".pdf-link").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default action
+            this.style.color = "#0000FF"; // Change color to blue (hex code for better compatibility)
+            this.classList.add("clicked-pdf"); // Add class to keep color changed
+            window.open(this.href, "_blank"); // Open PDF in a new tab
+        });
+    });
+
+    // Open dynamically generated website on icon click
+    document.querySelectorAll(".work-card a").forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const projectURL = this.getAttribute("href");
+            if (projectURL && projectURL !== "#") {
+                window.open(projectURL, "_blank");
+            }
+        });
+    });
+
+    // Open social media links on icon click
+    document.querySelectorAll(".social-icons a").forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const socialURL = this.getAttribute("href");
+            if (socialURL && socialURL !== "#") {
+                window.open(socialURL, "_blank");
+            }
+        });
+    });
+});
+
+// Google Sheets Form Submission
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyTavq9MFiZURdDptg9Z2XXvBcQzbs8RaxTqKtuZOrOIMeJ1mKybPaFN1auu5Ci-iJS/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById("msg");
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            msg.innerHTML = "✅ Message Sent Successfully!";
+            msg.style.color = "green";
+            setTimeout(() => { msg.innerHTML = ""; }, 5000);
+            form.reset();
+        })
+        .catch(error => {
+            msg.innerHTML = "❌ Error! Please try again.";
+            msg.style.color = "red";
+        });
+});
+
+
+
+</script>
+</body>
+
+</html>
